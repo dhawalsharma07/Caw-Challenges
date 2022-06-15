@@ -1,12 +1,12 @@
 import {timeUp} from './index.js';
-function reduceTimer()
+const reduceTimer=()=>
 {
-    var minutesField=getMinuteField();
-    var secondsField=getSecondField();
+    let minutesField=getMinuteField();
+    let secondsField=getSecondField();
     
-    var tempdecreasingTimer = setInterval(() => {
-        var minutes=minutesField.value;
-        var seconds=secondsField.value;
+    let tempdecreasingTimer = setInterval(() => {
+        let minutes=minutesField.value;
+        let seconds=secondsField.value;
         if(seconds==0){
             if(minutes>0){
             minutes--;
@@ -31,16 +31,16 @@ function reduceTimer()
     return tempdecreasingTimer;
 
 }
-function getMinuteField()
+const getMinuteField=()=>
 {
-  var minutediv=document.querySelector(".minutes");
-  var minuteValue=minutediv.children[0];
+  let minutediv=document.querySelector(".minutes");
+  let minuteValue=minutediv.children[0];
   return minuteValue;
 }
-function getSecondField()
+const getSecondField=()=>
 {
-    var seconddiv=document.querySelector(".seconds");
-    var secondValue=seconddiv.children[0];
+    let seconddiv=document.querySelector(".seconds");
+    let secondValue=seconddiv.children[0];
     return secondValue;
 }
 

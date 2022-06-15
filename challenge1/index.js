@@ -1,21 +1,21 @@
 import {change_timer,editTime,changeTextOfButton,changeRingColortoRed,changeRingColortoGreen} from "./changes.js";
 import { reduceTimer } from "./get.js";
-var StartButton= document.querySelector('.start');
-var settingButton= document.querySelector('.settings');
+let StartButton= document.querySelector('.start');
+let settingButton= document.querySelector('.settings');
 
-var decreasingTimer;
-function startTimer()
+let decreasingTimer;
+const startTimer =()=>
 {    
     changeRingColortoGreen();
     changeTextOfButton();
     decreasingTimer = reduceTimer();
 }
-function stopTimer()
+const stopTimer =()=>
 {
     clearInterval(decreasingTimer);
     changeTextOfButton();
 }
-function timeUp()
+const timeUp =()=>
 {
    clearInterval(decreasingTimer);
    changeRingColortoRed();

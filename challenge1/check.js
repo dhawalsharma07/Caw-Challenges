@@ -1,30 +1,58 @@
 import {getMinuteField,getSecondField} from './get.js';
 import {StartButton} from './index.js';
-function checkInputValue()
+const checkInputValue=()=>
 {
-    var minutes=getMinuteField().value;
-    var seconds=getSecondField().value;
-
-    if(minutes<=59 && minutes>=0 && 
-        seconds<=59 && seconds>=0 && 
-        !Number.isNaN(minutes) && !Number.isNaN(seconds) && 
-        minutes.indexOf('.')<0 && seconds.indexOf('.')< 0)
+    if( checkInputIndexValue()&&
+        checkInputMinutesValue()&&
+        checkInputNumberValue()&&
+        checkInputSecondsValue())
       {
         return true;
        }
     return false;
 }
-function timer_is_on()
+const checkInputNumberValue=()=>{
+    let minutes=getMinuteField().value;
+    let seconds=getSecondField().value;
+    if(!Number.isNaN(minutes) && !Number.isNaN(seconds)){
+        return true;
+    }
+    return false;
+}
+const checkInputIndexValue=()=>{
+    let minutes=getMinuteField().value;
+    let seconds=getSecondField().value;
+    if( minutes.indexOf('.')<0 && seconds.indexOf('.')< 0){
+        return true;
+    }
+    return false;
+}
+const checkInputMinutesValue=()=>{
+    let minutes=getMinuteField().value;
+    if(minutes>=0 && minutes<=59){
+        return true;
+    }
+    return false;
+}
+const checkInputSecondsValue=()=>{
+    let seconds=getSecondField().value;
+    if(seconds>=0 && seconds<=59){
+        return true;
+    }
+    return false;
+}
+
+const timer_is_on=()=>
 {
-    var Button_text_val= StartButton.innerHTML;
+    let Button_text_val= StartButton.innerHTML;
     if(Button_text_val=="stop"){
         return true;
     }
     return false;
 }
-function editing_is_on()
+const editing_is_on=()=>
 {
-    var minutesField=getMinuteField();
+    let minutesField=getMinuteField();
     if(minutesField.disabled == false){
         return true;
     }
