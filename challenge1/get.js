@@ -5,9 +5,9 @@ const reduceTimer=()=>
     let secondsField=getSecondField();
     
     let tempdecreasingTimer = setInterval(() => {
-        let minutes=minutesField.value;
-        let seconds=secondsField.value;
-        if(seconds==0){
+        let minutes=getMinuteFieldValue();
+        let seconds=getSecondFieldValue();
+        if(seconds==='00'){
             if(minutes>0){
             minutes--;
             seconds="59";
@@ -43,5 +43,16 @@ const getSecondField=()=>
     let secondValue=seconddiv.children[0];
     return secondValue;
 }
-
-export {getMinuteField,getSecondField,reduceTimer};
+const getMinuteFieldValue=()=>
+{
+  let minutediv=document.querySelector(".minutes");
+  let minuteValue=minutediv.children[0];
+  return minuteValue.value;
+}
+const getSecondFieldValue=()=>
+{
+    let seconddiv=document.querySelector(".seconds");
+    let secondValue=seconddiv.children[0];
+    return secondValue.value;
+}
+export {getMinuteField,getSecondField,reduceTimer,getMinuteFieldValue,getSecondFieldValue};

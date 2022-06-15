@@ -1,6 +1,7 @@
 import {checkInputValue,timer_is_on,editing_is_on} from './check.js';
 import {setTimeInputDisable,setTimeInputEnable} from './set.js';
 import {startTimer,stopTimer} from './index.js';
+import { getMinuteFieldValue } from './get.js';
 function change_timer()
 {
     if(editing_is_on()){
@@ -16,6 +17,8 @@ function change_timer()
 }
 function editTime()
 {
+    console.log(getMinuteFieldValue());
+    //console.log(geSecondsFieldValue());
     if(timer_is_on()){
         alert("Please stop the timer and then edit the time.")
     }
@@ -33,17 +36,17 @@ function editTime()
 }
 function changeRingColortoGreen()
 {
-    var ringColor=document.querySelector('.ring');
+    let ringColor=document.querySelector('.ring');
     ringColor.style.stroke = "#09A65A";
 }
 function changeTextOfButton()
 {
-     var textval=document.querySelector('.start');
+     let textval=document.querySelector('.start');
      textval.innerHTML=textval.innerHTML=="start"?"stop":"start";
 }
 function changeRingColortoRed()
 {
-    var ringColor=document.querySelector('.ring');
+    let ringColor=document.querySelector('.ring');
     ringColor.style.stroke = "#900A0A";
 }
 export {change_timer,changeRingColortoGreen,changeTextOfButton,changeRingColortoRed,editTime};

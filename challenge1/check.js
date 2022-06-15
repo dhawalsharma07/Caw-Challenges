@@ -1,4 +1,4 @@
-import {getMinuteField,getSecondField} from './get.js';
+import {getMinuteField,getMinuteFieldValue, getSecondFieldValue} from './get.js';
 import {StartButton} from './index.js';
 const checkInputValue=()=>
 {
@@ -12,30 +12,30 @@ const checkInputValue=()=>
     return false;
 }
 const checkInputNumberValue=()=>{
-    let minutes=getMinuteField().value;
-    let seconds=getSecondField().value;
+    let minutes=getMinuteFieldValue();
+    let seconds=getSecondFieldValue();
     if(!Number.isNaN(minutes) && !Number.isNaN(seconds)){
         return true;
     }
     return false;
 }
 const checkInputIndexValue=()=>{
-    let minutes=getMinuteField().value;
-    let seconds=getSecondField().value;
+    let minutes=getMinuteFieldValue();
+    let seconds=getSecondFieldValue();
     if( minutes.indexOf('.')<0 && seconds.indexOf('.')< 0){
         return true;
     }
     return false;
 }
 const checkInputMinutesValue=()=>{
-    let minutes=getMinuteField().value;
+    let minutes=getMinuteFieldValue();
     if(minutes>=0 && minutes<=59){
         return true;
     }
     return false;
 }
 const checkInputSecondsValue=()=>{
-    let seconds=getSecondField().value;
+    let seconds=getSecondFieldValue();
     if(seconds>=0 && seconds<=59){
         return true;
     }
