@@ -8,28 +8,40 @@ const reduceTimer=()=>
         let minutes=getMinuteFieldValue();
         let seconds=getSecondFieldValue();
         if(seconds==='00'){
-            if(minutes>0){
-            minutes--;
-            seconds="59";
-          }
-          else{
-            timeUp();
-          }
+          minutes>0?(minutes = decreaseminute(minutes) , seconds = setsecondvalue()) : timeUp();
+          //   if(minutes>0){
+          //   minutes--;
+          //   seconds="59";
+          // }
+          // else{
+          //   timeUp();
+          // }
         }
         else{
             seconds--;
         }
-          if(minutes>=0 && minutes<=9){
-            minutes='0'+minutes%10;
-          }
-          if(seconds>=0 && seconds<=9){
-            seconds='0'+seconds%10;
-          }
-          minutesField.value=minutes;
-          secondsField.value=seconds;
+       minutes=valuebetween0to9(minutes);
+       seconds=valuebetween0to9(seconds);
+       minutesField.value=minutes;
+       secondsField.value=seconds;
     }, 1000);
     return tempdecreasingTimer;
 
+}
+const decreaseminute=(val)=>{
+  
+  return --val;
+}
+
+const setsecondvalue=()=>{
+  return "59";
+}
+
+const valuebetween0to9=(val)=>{
+  if(val>=0 && val<=9){
+    val='0'+val%10;
+  }
+  return val;
 }
 const getMinuteField=()=>
 {
