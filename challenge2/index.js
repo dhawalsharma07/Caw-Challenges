@@ -1,5 +1,5 @@
-import { onclickCartbtn } from "./utilities.js";
-let cartButton= document.querySelectorAll('.add');
-cartButton.forEach(element => {
-    element.addEventListener('click', onclickCartbtn);
-})
+import {onclickCartbtn} from './utilities.js';
+const cartButton = document.querySelectorAll('.add');
+cartButton.forEach((element) => {
+  element.addEventListener('click', onclickCartbtn);
+});

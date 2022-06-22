@@ -1,6 +1,6 @@
-import { change_timer, editTime } from "./changes.js";
+import {changeTimer, editTime} from './changes.js';
 
-let StartButton = document.querySelector('.start');
-let settingButton = document.querySelector('.settings');
-StartButton.addEventListener('click', change_timer);
+const StartButton = document.querySelector('.start');
+const settingButton = document.querySelector('.settings');
+StartButton.addEventListener('click', changeTimer);
 settingButton.addEventListener('click', editTime);
