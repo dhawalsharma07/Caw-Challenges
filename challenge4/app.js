@@ -1,2 +1,2 @@
 import {onClickKey} from './utilities.js';
-document.addEventListener("keydown",onClickKey);
+document.addEventListener('keydown', onClickKey);

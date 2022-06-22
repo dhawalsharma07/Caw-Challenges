@@ -1,15 +1,16 @@
 import {timeUp} from './changes.js';
 export const reduceTimer = () => {
-  let minutesField = getMinuteField();
-  let secondsField = getSecondField();
+  const minutesField = getMinuteField();
+  const secondsField = getSecondField();
 
-  let tempdecreasingTimer = setInterval(() => {
+  const tempdecreasingTimer = setInterval(() => {
     let minutes = getMinuteFieldValue();
     let seconds = getSecondFieldValue();
     if (seconds === '00') {
-      minutes > 0 ? (minutes = decreaseminute(minutes), seconds = setsecondvalue()) : timeUp();
-    }
-    else {
+      minutes > 0 ?
+        ((minutes = decreaseminute(minutes)), (seconds = setsecondvalue())) :
+        timeUp();
+    } else {
       seconds--;
     }
     minutes = valuebetween0to9(minutes);
@@ -18,36 +19,36 @@ export const reduceTimer = () => {
     secondsField.value = seconds;
   }, 1000);
   return tempdecreasingTimer;
-}
+};
 const decreaseminute = (val) => {
   return --val;
-}
+};
 const setsecondvalue = () => {
-  return "59";
-}
+  return '59';
+};
 const valuebetween0to9 = (val) => {
   if (val >= 0 && val <= 9) {
-    val = '0' + val % 10;
+    val = '0' + (val % 10);
   }
   return val;
-}
+};
 export const getMinuteField = () => {
-  let minutediv = document.querySelector(".minutes");
-  let minuteValue = minutediv.children[0];
+  const minutediv = document.querySelector('.minutes');
+  const minuteValue = minutediv.children[0];
   return minuteValue;
-}
+};
 export const getSecondField = () => {
-  let seconddiv = document.querySelector(".seconds");
-  let secondValue = seconddiv.children[0];
+  const seconddiv = document.querySelector('.seconds');
+  const secondValue = seconddiv.children[0];
   return secondValue;
-}
+};
 export const getMinuteFieldValue = () => {
-  let minutediv = document.querySelector(".minutes");
-  let minuteValue = minutediv.children[0];
+  const minutediv = document.querySelector('.minutes');
+  const minuteValue = minutediv.children[0];
   return minuteValue.value;
-}
+};
 export const getSecondFieldValue = () => {
-  let seconddiv = document.querySelector(".seconds");
-  let secondValue = seconddiv.children[0];
+  const seconddiv = document.querySelector('.seconds');
+  const secondValue = seconddiv.children[0];
   return secondValue.value;
-}
+};
