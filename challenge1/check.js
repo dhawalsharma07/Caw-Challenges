@@ -4,57 +4,64 @@ import {
   getSecondFieldValue,
 } from './get.js';
 export const checkInputValue = () => {
+  let flag = false;
   if (
     checkInputIndexValue() &&
     checkInputMinutesValue() &&
     checkInputNumberValue() &&
     checkInputSecondsValue()
   ) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 const checkInputNumberValue = () => {
   const minutes = getMinuteFieldValue();
   const seconds = getSecondFieldValue();
+  let flag = false;
   if (!Number.isNaN(minutes) && !Number.isNaN(seconds)) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 const checkInputIndexValue = () => {
   const minutes = getMinuteFieldValue();
   const seconds = getSecondFieldValue();
+  let flag = false;
   if (minutes.indexOf('.') < 0 && seconds.indexOf('.') < 0) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 const checkInputMinutesValue = () => {
   const minutes = getMinuteFieldValue();
+  let flag = false;
   if (minutes >= 0 && minutes <= 59) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 const checkInputSecondsValue = () => {
   const seconds = getSecondFieldValue();
+  let flag = false;
   if (seconds >= 0 && seconds <= 59) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 export const timerIsOn = () => {
   const ButtonTextVal = document.querySelector('.start').textContent;
+  let flag = false;
   if (ButtonTextVal == 'stop') {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };
 export const editingIsOn = () => {
   const minutesField = getMinuteField();
+  let flag = false;
   if (minutesField.disabled == false) {
-    return true;
+    flag = true;
   }
-  return false;
+  return flag;
 };

@@ -1,6 +1,5 @@
 export const onClickKey = (event) => {
   const pressedKey = event.key;
-  console.log(pressedKey);
   rightKeyPressed(pressedKey);
 };
 const checkPressedKey = (keyPressed) => {
@@ -26,6 +25,4 @@ const changeKey = (pressedKeyNode) => {
 const rightKeyPressed = (pressedKey) => {
   const keyPressed = pressedKey.toUpperCase();
   checkPressedKey(keyPressed);
-  //     printNewKey(keyPressed);
-  //   }
 };
