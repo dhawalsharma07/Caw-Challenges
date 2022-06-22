@@ -1,0 +1,33 @@
+{
+  "name": "caw-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhawalsharma07/Caw-Challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhawalsharma07/Caw-Challenges/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged",
+      "pre-push": "ng build --aot true"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write",
+    "*.js": "eslint --cache --fix"
+  },
+  "homepage": "https://github.com/dhawalsharma07/Caw-Challenges#readme",
+  "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2"
+  }
+}
