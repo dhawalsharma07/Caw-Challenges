@@ -1,4 +1,4 @@
-import {getEpisodeListNode} from "./utilities.js"; 
+import {getEpisodeListNode } from "./utilities.js"; 
 const episodes = [
   {
     'id': 1,
