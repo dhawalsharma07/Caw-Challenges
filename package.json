@@ -22,11 +22,6 @@
       "pre-push": "ng build --aot true"
     }
   },
-  "lint-staged": {
-    "*.{js,css,html,md}": "prettier --write",
-    "*.js": "eslint --fix",
-    "*.css": "stylelint \"**/*.css\" --fix"
-  },
   "homepage": "https://github.com/dhawalsharma07/Caw-Challenges#readme",
   "devDependencies": {
     "eslint": "^8.18.0",
@@ -38,5 +33,16 @@
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^26.0.0"
+  },
+  "lint-staged": {
+    "*.{js,css,html,md}":[ 
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.css": [
+      "stylelint \"**/*.css\" --fix"
+    ]
   }
 }
