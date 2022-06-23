@@ -7,10 +7,12 @@ export const reduceTimer = () => {
         let minutes = getMinuteFieldValue();
         let seconds = getSecondFieldValue();
         if (seconds === '00') {
-            minutes > 0 ?
-                ((minutes = decreaseminute(minutes)),
-                (seconds = setsecondvalue())) :
+            if (minutes > 0) {
+                minutes = decreaseminute(minutes);
+            } else {
+                seconds = setsecondvalue();
                 timeUp();
+            }
         } else {
             seconds--;
         }
