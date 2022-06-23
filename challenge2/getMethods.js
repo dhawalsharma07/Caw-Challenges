@@ -80,7 +80,7 @@ const getPlateDiv = (itemDetails) => {
   const plateQuantityDiv = document.createElement('div');
   plateQuantityDiv.classList.add('quantity');
   plateQuantityDiv.appendChild(
-      document.createTextNode(`${itemDetails.count + 1}`),
+      bdocument.createTextNode(`${itemDetails.count + 1}`),
   );
   plateDIv.appendChild(dishImage);
   plateDIv.appendChild(plateQuantityDiv);
