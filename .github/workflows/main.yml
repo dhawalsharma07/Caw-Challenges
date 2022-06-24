@@ -3,7 +3,7 @@ name: Upload Website
 on:
     push:
         branches:
-            - feature/checklist
+            - develop
 
 jobs:
     deploy:
@@ -19,7 +19,7 @@ jobs:
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
             - name: invalidate cloudfront distribution and wait for completion
-              uses: muratiger/invalidate-cloudfront-and-wait-for-completion-action@master
+              uses: aws cloudfront create-invalidation --distribution-id ${{secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID}} --paths "/"
               env:
                   DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
                   PATHS: '/*'
